@@ -7,7 +7,7 @@
 
 <?php
 // {{{ constants 
-define('GOOGLE_ANALYTICS_PLUGIN_VERSION', get_plugin_ini('GoogleAnalytics', 'version'))
+define('GOOGLE_ANALYTICS_PLUGIN_VERSION', get_plugin_ini('GoogleAnalytics', 'version'));
 define('GOOGLE_ANALYTICS_PLUGIN_DIR', dirname(__FILE__));
 // }}}
 
@@ -39,26 +39,26 @@ function ga_config_form()
     echo('<div id="ga_config_form">');
     echo('<label for="google_analytics_key">Google Analytics Key:</label>');
     echo text(array('name' => 'google_analytics_key', get_option('google_analytics_key'), null));
-    echo('</div>')
+    echo('</div>');
 }
 
 function ga_footer()
 {
     $gaKey = get_option('google_analytics_key'); // google analytics key
-    $analytics = <<<ANALYTICS
-<!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
-       change the UA-XXXXX-X to be your site's ID -->
-  <script>
-   var _gaq = [['_setAccount', '$gaKey'], ['_trackPageview']];
-   (function(d, t) {
-    var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-    g.async = true;
-    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g, s);
-   })(document, 'script');
-  </script>
-ANALYTICS;
+    // $analytics = <<<ANALYTICS
+    // <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+    //        change the UA-XXXXX-X to be your site's ID -->
+    //   <script>
+    //    var _gaq = [['_setAccount', '$gaKey'], ['_trackPageview']];
+    //    (function(d, t) {
+    //     var g = d.createElement(t),
+    //         s = d.getElementsByTagName(t)[0];
+    //     g.async = true;
+    //     g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    //     s.parentNode.insertBefore(g, s);
+    //    })(document, 'script');
+    //   </script>
+    // ANALYTICS;
 
-    echo $analytics;
+    //echo $analytics;
 }
