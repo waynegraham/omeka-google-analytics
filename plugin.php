@@ -29,7 +29,6 @@
 <?php
 // {{{ constants 
 define('GOOGLE_ANALYTICS_PLUGIN_VERSION', get_plugin_ini('GoogleAnalytics', 'version'));
-define('GOOGLE_ANALYTICS_PLUGIN_DIR', dirname(__FILE__));
 // }}}
 
 // {{{ hooks
