@@ -30,14 +30,12 @@ class GoogleAnalyticsPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $gaKey = get_option('google_analytics_key'); // google analytics key
         $analytics =<<< ANALYTICS
-<script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', '$gaKey', 'auto');
 ga('send', 'pageview');
-</script>
 ANALYTICS;
 
         queue_js_string($analytics);
